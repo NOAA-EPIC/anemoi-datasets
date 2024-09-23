@@ -45,8 +45,6 @@ class XArrayField(Field):
             This is actually a nD object, but the first dimensions are always 1.
             The other two dimensions are latitude and longitude.
         """
-        super().__init__(owner.array_backend)
-
         self.owner = owner
         self.selection = selection
 

@@ -12,7 +12,6 @@ import math
 from functools import cached_property
 
 import numpy as np
-from earthkit.data.utils.array import ensure_backend
 
 from .field import XArrayField
 
@@ -29,7 +28,6 @@ class Variable:
         grid,
         time,
         metadata,
-        array_backend=None,
     ):
         self.ds = ds
         self.var = var
@@ -47,7 +45,6 @@ class Variable:
         self.by_name = {c.variable.name: c for c in coordinates}
 
         self.length = math.prod(self.shape)
-        self.array_backend = ensure_backend(array_backend)
 
     @property
     def name(self):
